@@ -1,5 +1,4 @@
 function FormPersonalData(CVData) {
-  console.log(CVData);
   let data = CVData.CVData.data;
   let setCVData = CVData.CVData.setCVData;
   function handleNameChange(e) {
