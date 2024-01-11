@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FormDeleteEducation from './FormDeleteEducation';
 
 function FormEducationData(CVData) {
   let setCVData = CVData.CVData.setCVData;
@@ -46,9 +47,28 @@ function FormEducationData(CVData) {
     });
   }
 
+  function handleDeleteEd(e) {
+    setCVData({
+      ...data,
+      education: data.education.filter((ed) => {
+        ed.school !== e.target.id;
+      }),
+    });
+  }
+
   return (
     <form className="education-data-form" onSubmit={handleEducSubmit}>
       <h2>Education</h2>
+      {data.education.map((ed) => {
+        return (
+          <FormDeleteEducation
+            data={ed}
+            handleDeleteEd={handleDeleteEd}
+            key={crypto.randomUUID()}
+          />
+        );
+      })}
+
       <label className="school-form">
         School
         <input
