@@ -1,0 +1,74 @@
+body {
+  background-color: black;
+  color: whitesmoke;
+  margin: 0;
+}
+
+header {
+  margin: 50px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.personal-data-form {
+  margin: 50px;
+  max-width: 30%;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  .full-name-form {
+    grid-row: 2 / 3;
+  }
+  .email-form {
+    grid-row: 3 / 4;
+  }
+  .date-form {
+    grid-row: 4 / 5 input {
+      width: 170px;
+    }
+  }
+  .region-form {
+    grid-row: 5 / 6;
+  }
+  label {
+    max-width: 200px;
+  }
+}
+
+.education-data-form {
+  margin: 50px;
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template: repeat(4, 1fr) / 1fr;
+  max-width: 35%;
+  gap: 10px;
+  .school-form {
+    grid-row: 2 / 3;
+  }
+  .degree-form {
+    grid-row: 3 / 4;
+  }
+  .education-date-form {
+    max-width: 400px;
+    grid-row: 4 / 5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    input {
+      width: 85px;
+    }
+  }
+  .place-form {
+    grid-row: 5 / 6;
+  }
+  label > input {
+    width: 310px;
+  }
+}
+
+.cv {
+  grid-area: 1 / 2 / 2 / 3;
+}
