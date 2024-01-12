@@ -1,45 +1,164 @@
-body {
-  background-color: black;
-  color: whitesmoke;
-  margin: 0;
-}
-
-header {
-  margin: 50px;
-}
-
-main {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap");
+.cv {
+  grid-area: 1/2/2/3;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 4fr;
+  width: 30%;
+  background-color: whitesmoke;
+  color: black;
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin-top: 70px;
+  align-self: flex-start;
+  position: sticky;
+  top: 15px;
 }
 
-.personal-data-form {
-  margin: 50px;
+.top-cv {
+  margin: 0 -10px;
+  border-radius: 5px;
+  background-color: #0cede6;
+}
+
+.cv-name {
+  text-align: center;
+  margin: 15px;
+  font-size: 4rem;
+}
+
+.cv-top-data {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+.cv-top-data div {
+  font-size: 1.4rem;
+  margin: 5px;
+}
+.cv-top-data div .cv-top-data-icon {
+  font-size: 1.8rem;
+  margin-right: 5px;
+  transform: translateY(0.4rem);
+}
+
+.bottom-cv {
+  margin: 30px 0;
+}
+.bottom-cv hr {
+  margin: 20px;
+}
+.bottom-cv .bottom-cv-title {
+  margin: 15px;
+  text-align: center;
+  font-size: 2.5rem;
+}
+.bottom-cv .education {
+  margin-bottom: 50px;
+}
+.bottom-cv .education .education-element:last-child hr {
+  display: none;
+}
+.bottom-cv .education .education-element .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom-cv .education .education-element .cv-degree {
+  font-size: 2rem;
+}
+.bottom-cv .education .education-element .cv-school,
+.bottom-cv .education .education-element .cv-educ-place {
+  font-size: 1.5rem;
+}
+.bottom-cv .work .work-element div {
+  margin: 5px 0;
+}
+.bottom-cv .work .work-element .cv-position {
+  font-size: 2rem;
+}
+.bottom-cv .work .work-element .cv-company-date {
+  font-size: 1.5rem;
+}
+.bottom-cv .work .work-element .cv-place {
+  font-size: 1.2rem;
+}
+.bottom-cv .work .work-element:last-child hr {
+  display: none;
+}
+
+.cv-form {
+  margin: 50px 100px;
+  max-height: 400px;
   max-width: 30%;
+  grid-column: 1/2;
   display: grid;
   grid-template-rows: repeat(5, 1fr);
-  gap: 10px;
 }
+.cv-form h2 {
+  font-size: 3rem;
+}
+.cv-form label {
+  max-width: 200px;
+  max-height: 50px;
+  font-size: 1.5rem;
+}
+.cv-form input {
+  width: 310px;
+  color: whitesmoke;
+  background-color: #101010;
+  border: 1px solid #4f5252;
+  border-radius: 5px;
+  padding: 3px;
+}
+.cv-form input:hover,
+.cv-form input:focus {
+  border: 1px solid #0cede6;
+}
+.cv-form .add-button {
+  cursor: pointer;
+  background-color: #0cede6;
+  width: 100px;
+  margin: 20px 100px;
+  border: 1px solid #4f5252;
+  border-radius: 5px;
+}
+.cv-form .add-button:hover {
+  border: 1px solid whitesmoke;
+}
+.cv-form .created-ed,
+.cv-form .created-work {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: start;
+}
+.cv-form .created-ed button,
+.cv-form .created-work button {
+  cursor: pointer;
+  justify-self: end;
+  margin-right: 15px;
+  background-color: red;
+  border: 1px solid #4f5252;
+  border-radius: 5px;
+}
+.cv-form .created-ed button:hover,
+.cv-form .created-work button:hover {
+  border: 1px solid whitesmoke;
+}
+
 .personal-data-form .full-name-form {
   grid-row: 2/3;
 }
 .personal-data-form .email-form {
   grid-row: 3/4;
 }
-.personal-data-form .date-form {
-  grid-row: 4/5 input;
-  grid-row-width: 170px;
-}
 .personal-data-form .region-form {
   grid-row: 5/6;
 }
-.personal-data-form label {
-  max-width: 200px;
-}
 
 .education-data-form {
-  margin: 50px;
-  grid-column: 1/2;
+  margin-left: 100px;
   display: grid;
   grid-template: repeat(4, 1fr)/1fr;
   max-width: 35%;
@@ -59,7 +178,7 @@ main {
   margin: 0;
 }
 .education-data-form .education-date-form input {
-  width: 85px;
+  width: 140px;
 }
 .education-data-form .place-form {
   grid-row: 5/6;
@@ -68,6 +187,46 @@ main {
   width: 310px;
 }
 
-.cv {
-  grid-area: 1/2/2/3;
+.works-data-form {
+  max-width: 35%;
+  margin: 150px 100px;
+  grid-column: 1/2;
+  display: grid;
+  gap: 10px;
+}
+.works-data-form .works-date-form {
+  display: flex;
+  flex-direction: column;
+}
+.works-data-form .works-date-form label {
+  max-width: 200px;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", "Montserrat", sans-serif;
+  background-color: #141414;
+  color: whitesmoke;
+  margin: 0;
+}
+
+header {
+  margin: 0 100px;
+  font-size: 2rem;
+}
+header span {
+  color: #0cede6;
+}
+
+main {
+  display: flex;
+  gap: 17%;
+}
+
+hr {
+  width: 95%;
+  background-color: #141414;
 }/*# sourceMappingURL=main.css.map */

@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import FormDeleteEducation from './FormDeleteEducation';
+import { MdAdd } from 'react-icons/md';
 
-function FormEducationData(CVData) {
-  let setCVData = CVData.CVData.setCVData;
-  let data = CVData.CVData.data;
+function FormEducationData({ CVData, setCVData }) {
   const [actualEducData, setActualEducData] = useState({
     school: '',
     degree: '',
@@ -15,9 +14,9 @@ function FormEducationData(CVData) {
   function handleEducSubmit(e) {
     e.preventDefault();
     setCVData({
-      ...data,
+      ...CVData,
       education: [
-        ...data.education,
+        ...CVData.education,
         {
           school: actualEducData.school,
           degree: actualEducData.degree,
@@ -47,28 +46,19 @@ function FormEducationData(CVData) {
     });
   }
 
-  function handleDeleteEd(e) {
-    setCVData({
-      ...data,
-      education: data.education.filter((ed) => {
-        ed.school !== e.target.id;
-      }),
-    });
-  }
-
   return (
-    <form className="education-data-form" onSubmit={handleEducSubmit}>
+    <form className="education-data-form cv-form" onSubmit={handleEducSubmit}>
       <h2>Education</h2>
-      {data.education.map((ed) => {
+      {CVData.education.map((ed) => {
         return (
           <FormDeleteEducation
-            data={ed}
-            handleDeleteEd={handleDeleteEd}
+            edData={ed}
+            CVData={CVData}
+            setCVData={setCVData}
             key={crypto.randomUUID()}
           />
         );
       })}
-
       <label className="school-form">
         School
         <input
@@ -91,7 +81,7 @@ function FormEducationData(CVData) {
         <label htmlFor="">
           Start date
           <input
-            type="date"
+            type="text"
             name="startDate"
             value={actualEducData.startDate}
             onChange={handleEducChange}
@@ -100,7 +90,7 @@ function FormEducationData(CVData) {
         <label htmlFor="">
           Finish date
           <input
-            type="date"
+            type="text"
             name="endDate"
             value={actualEducData.endDate}
             onChange={handleEducChange}
@@ -116,7 +106,9 @@ function FormEducationData(CVData) {
           onChange={handleEducChange}
         />
       </label>
-      <button type="submit">Add</button>
+      <button type="submit" className="add-button">
+        <MdAdd />
+      </button>
     </form>
   );
 }

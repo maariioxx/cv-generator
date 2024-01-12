@@ -1,46 +1,48 @@
-function FormPersonalData(CVData) {
-  let data = CVData.CVData.data;
-  let setCVData = CVData.CVData.setCVData;
+function FormPersonalData({ CVData, setCVData }) {
   function handleNameChange(e) {
     setCVData({
-      ...data,
+      ...CVData,
       fullName: e.target.value,
     });
   }
   function handleEmailChange(e) {
     setCVData({
-      ...data,
+      ...CVData,
       email: e.target.value,
     });
   }
   function handlePhoneNumberChange(e) {
     setCVData({
-      ...data,
+      ...CVData,
       phoneNumber: e.target.value,
     });
   }
   function handlePersonPlaceChange(e) {
     setCVData({
-      ...data,
+      ...CVData,
       place: e.target.value,
     });
   }
   return (
-    <form className="personal-data-form">
+    <form className="personal-data-form cv-form">
       <h2>Personal Data</h2>
       <label className="full-name-form">
         Full name
-        <input type="text" value={data.fullName} onChange={handleNameChange} />
+        <input
+          type="text"
+          value={CVData.fullName}
+          onChange={handleNameChange}
+        />
       </label>
       <label className="email-form">
         Email
-        <input type="email" value={data.email} onChange={handleEmailChange} />
+        <input type="email" value={CVData.email} onChange={handleEmailChange} />
       </label>
       <label className="phone-number-form">
         Phone number
         <input
           type="tel"
-          value={data.phoneNumber}
+          value={CVData.phoneNumber}
           onChange={handlePhoneNumberChange}
         />
       </label>
@@ -48,7 +50,7 @@ function FormPersonalData(CVData) {
         City, region and country
         <input
           type="text"
-          value={data.place}
+          value={CVData.place}
           onChange={handlePersonPlaceChange}
         />
       </label>

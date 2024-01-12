@@ -1,10 +1,19 @@
-function FormDeleteEducation({ data, handleDeleteEd }) {
-  console.log(data);
+import { MdDelete } from 'react-icons/md';
+
+function FormDeleteEducation({ edData, CVData, setCVData }) {
+  function handleDeleteEd(e) {
+    setCVData((person) => {
+      return {
+        ...person,
+        education: person.education.filter((ed) => ed.school !== e.target.id),
+      };
+    });
+  }
   return (
     <div className="created-ed">
-      <div className="ed-name">{data.school}</div>
-      <button type="button" onClick={handleDeleteEd} id={data.school}>
-        Delete
+      <div className="ed-name">{edData.school}</div>
+      <button type="button" onClick={handleDeleteEd} id={edData.school}>
+        <MdDelete />
       </button>
     </div>
   );

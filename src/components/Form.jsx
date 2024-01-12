@@ -2,14 +2,13 @@ import FormPersonalData from './FormPersonalData';
 import FormEducationData from './FormEducationData';
 import FormWorksData from './FormWorksData';
 
-function Form(data, setCVData) {
-  let CVData = data;
+function Form({ CVData, setCVData }) {
   return (
-    <>
-      <FormPersonalData CVData={CVData} />
-      <FormEducationData CVData={CVData} />
-      <FormWorksData CVData={CVData} />
-    </>
+    <div className="form">
+      <FormPersonalData CVData={CVData} setCVData={setCVData} />
+      <FormEducationData CVData={CVData} setCVData={setCVData} />
+      <FormWorksData CVData={CVData} setCVData={setCVData} />
+    </div>
   );
 }
 

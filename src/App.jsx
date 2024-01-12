@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import CVEducation from './components/CVEducation.jsx';
 import Form from './components/Form.jsx';
-import CVWork from './components/CVWork.jsx';
+import CV from './components/CV.jsx';
 
 function App() {
   const [CVData, setCVData] = useState({
@@ -12,6 +11,13 @@ function App() {
     education: [
       {
         school: 'IES Floridablanca',
+        degree: 'Bachillerato',
+        startDate: '08/09/2021',
+        endDate: '08/05/2023',
+        place: 'Murcia, Spain',
+      },
+      {
+        school: 'IES Floridablanc',
         degree: 'Bachillerato',
         startDate: '08/09/2021',
         endDate: '08/05/2023',
@@ -34,27 +40,13 @@ function App() {
   return (
     <>
       <header>
-        <h1>cvgenerator</h1>
+        <h1>
+          <span>cv</span>generator
+        </h1>
       </header>
       <main>
-        <Form data={CVData} setCVData={setCVData} />
-        <div className="cv">
-          <div className="top-cv">
-            <div className="cv-name">{CVData.fullName}</div>
-            <div className="cv-email">{CVData.email}</div>
-            <div className="cv-phone">{CVData.phoneNumber}</div>
-            <div className="cv-person-place">{CVData.place}</div>
-          </div>
-          <div className="bottom-cv">
-            <div className="education-title">Education</div>
-            {CVData.education.map((edu) => {
-              return <CVEducation data={edu} key={crypto.randomUUID()} />;
-            })}
-            {CVData.works.map((work) => {
-              return <CVWork data={work} key={crypto.randomUUID()} />;
-            })}
-          </div>
-        </div>
+        <Form CVData={CVData} setCVData={setCVData} />
+        <CV CVData={CVData} />
       </main>
     </>
   );

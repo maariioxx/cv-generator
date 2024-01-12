@@ -1,0 +1,114 @@
+.cv-form {
+  margin: 50px 100px;
+  max-height: 400px;
+  max-width: 30%;
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  h2 {
+    font-size: 3rem;
+  }
+  label {
+    max-width: 200px;
+    max-height: 50px;
+    font-size: 1.5rem;
+  }
+  input {
+    width: 310px;
+    color: $textColor;
+    background-color: $inputBgColor;
+    border: 1px solid $inputBorderColor;
+    border-radius: 5px;
+    padding: 3px;
+  }
+  input:hover,
+  input:focus {
+    border: 1px solid $tertiaryColor;
+  }
+  .add-button {
+    cursor: pointer;
+    background-color: $tertiaryColor;
+    width: 100px;
+    margin: 20px 100px;
+    border: 1px solid $inputBorderColor;
+    border-radius: 5px;
+  }
+  .add-button:hover {
+    border: 1px solid $textColor;
+  }
+  .created-ed,
+  .created-work {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: start;
+    button {
+      cursor: pointer;
+      justify-self: end;
+      margin-right: 15px;
+      background-color: red;
+      border: 1px solid $inputBorderColor;
+      border-radius: 5px;
+    }
+    button:hover {
+      border: 1px solid $textColor;
+    }
+  }
+}
+
+.personal-data-form {
+  .full-name-form {
+    grid-row: 2 / 3;
+  }
+  .email-form {
+    grid-row: 3 / 4;
+  }
+  .region-form {
+    grid-row: 5 / 6;
+  }
+}
+.education-data-form {
+  margin-left: 100px;
+  display: grid;
+  grid-template: repeat(4, 1fr) / 1fr;
+  max-width: 35%;
+  gap: 10px;
+  .school-form {
+    grid-row: 2 / 3;
+  }
+  .degree-form {
+    grid-row: 3 / 4;
+  }
+  .education-date-form {
+    max-width: 400px;
+    grid-row: 4 / 5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    input {
+      width: 140px;
+    }
+  }
+  .place-form {
+    grid-row: 5 / 6;
+  }
+  label > input {
+    width: 310px;
+  }
+}
+
+.works-data-form {
+  max-width: 35%;
+  margin: 150px 100px;
+  grid-column: 1 / 2;
+  display: grid;
+  gap: 10px;
+  .works-date-form {
+    display: flex;
+    flex-direction: column;
+    label {
+      max-width: 200px;
+    }
+  }
+}

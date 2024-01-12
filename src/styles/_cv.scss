@@ -1,0 +1,96 @@
+.cv {
+  grid-area: 1 / 2 / 2 / 3;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  width: 30%;
+  background-color: $cvBackgroundColor;
+  color: $cvTextColor;
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin-top: 70px;
+  align-self: flex-start;
+  position: sticky;
+  top: 15px;
+}
+
+.top-cv {
+  margin: 0 -10px;
+  border-radius: 5px;
+  background-color: $tertiaryColor;
+}
+
+.cv-name {
+  text-align: center;
+  margin: 15px;
+  font-size: 4rem;
+}
+
+.cv-top-data {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  div {
+    font-size: 1.4rem;
+    margin: 5px;
+    .cv-top-data-icon {
+      font-size: 1.8rem;
+      margin-right: 5px;
+      transform: translateY(0.4rem);
+    }
+  }
+}
+
+.bottom-cv {
+  margin: 30px 0;
+  hr {
+    margin: 20px;
+  }
+  .bottom-cv-title {
+    margin: 15px;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  .education {
+    margin-bottom: 50px;
+    .education-element:last-child {
+      hr {
+        display: none;
+      }
+    }
+    .education-element {
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .cv-degree {
+        font-size: 2rem;
+      }
+      .cv-school,
+      .cv-educ-place {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .work {
+    .work-element {
+      div {
+        margin: 5px 0;
+      }
+      .cv-position {
+        font-size: 2rem;
+      }
+      .cv-company-date {
+        font-size: 1.5rem;
+      }
+      .cv-place {
+        font-size: 1.2rem;
+      }
+    }
+    .work-element:last-child {
+      hr {
+        display: none;
+      }
+    }
+  }
+}

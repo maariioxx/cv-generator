@@ -1,9 +1,8 @@
 import { useState } from 'react';
+import FormDeleteWork from './FormDeleteWork';
+import { MdAdd } from 'react-icons/md';
 
-function FormWorksData(CVData) {
-  let setCVData = CVData.CVData.setCVData;
-  let data = CVData.CVData.data;
-
+function FormWorksData({ CVData, setCVData }) {
   const [actualWorkData, setActualWorkData] = useState({
     position: '',
     company: '',
@@ -16,9 +15,9 @@ function FormWorksData(CVData) {
   function handleWorkSubmit(e) {
     e.preventDefault();
     setCVData({
-      ...data,
+      ...CVData,
       works: [
-        ...data.works,
+        ...CVData.works,
         {
           position: actualWorkData.position,
           company: actualWorkData.company,
@@ -50,8 +49,18 @@ function FormWorksData(CVData) {
   }
 
   return (
-    <form className="works-data-form" onSubmit={handleWorkSubmit}>
+    <form className="works-data-form cv-form" onSubmit={handleWorkSubmit}>
       <h2>Works</h2>
+      {CVData.works.map((work) => {
+        return (
+          <FormDeleteWork
+            workData={work}
+            CVData={CVData}
+            setCVData={setCVData}
+            key={crypto.randomUUID()}
+          />
+        );
+      })}
       <label htmlFor="">
         Position
         <input
@@ -61,6 +70,7 @@ function FormWorksData(CVData) {
           onChange={handleWorkChange}
         />
       </label>
+
       <label htmlFor="">
         Company
         <input
@@ -70,24 +80,26 @@ function FormWorksData(CVData) {
           onChange={handleWorkChange}
         />
       </label>
-      <label htmlFor="">
-        Start date
-        <input
-          type="date"
-          name="startDate"
-          value={actualWorkData.startDate}
-          onChange={handleWorkChange}
-        />
-      </label>
-      <label htmlFor="">
-        Finish date
-        <input
-          type="date"
-          name="endDate"
-          value={actualWorkData.endDate}
-          onChange={handleWorkChange}
-        />
-      </label>
+      <div className="works-date-form">
+        <label htmlFor="">
+          Start date
+          <input
+            type="text"
+            name="startDate"
+            value={actualWorkData.startDate}
+            onChange={handleWorkChange}
+          />
+        </label>
+        <label htmlFor="">
+          Finish date
+          <input
+            type="text"
+            name="endDate"
+            value={actualWorkData.endDate}
+            onChange={handleWorkChange}
+          />
+        </label>
+      </div>
       <label htmlFor="">
         Place
         <input
@@ -97,7 +109,18 @@ function FormWorksData(CVData) {
           onChange={handleWorkChange}
         />
       </label>
-      <button type="submit">Add</button>
+      <label htmlFor="">
+        Description
+        <input
+          type="text"
+          name="description"
+          value={actualWorkData.description}
+          onChange={handleWorkChange}
+        />
+      </label>
+      <button type="submit" className="add-button">
+        <MdAdd />
+      </button>
     </form>
   );
 }
