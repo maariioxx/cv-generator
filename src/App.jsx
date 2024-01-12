@@ -4,35 +4,35 @@ import CV from './components/CV.jsx';
 
 function App() {
   const [CVData, setCVData] = useState({
-    fullName: 'Manolo Juan',
-    email: 'manolin@gmail.com',
+    fullName: 'John Jones',
+    email: 'example@gmail.com',
     phoneNumber: '672134589',
-    place: 'Valencia, Spain',
+    place: 'Example, Examplelandia',
     education: [
       {
-        school: 'IES Floridablanca',
-        degree: 'Bachillerato',
+        school: 'Example',
+        degree: 'Example',
         startDate: '08/09/2021',
         endDate: '08/05/2023',
-        place: 'Murcia, Spain',
+        place: 'Example, Spain',
       },
       {
-        school: 'IES Floridablanc',
-        degree: 'Bachillerato',
+        school: 'Example',
+        degree: 'Example',
         startDate: '08/09/2021',
         endDate: '08/05/2023',
-        place: 'Murcia, Spain',
+        place: 'Example, Spain',
       },
     ],
     works: [
       {
         position: 'Junior Front-End Developer',
-        company: 'MariscalTV',
+        company: 'Example',
         startDate: '08/06/2023',
         endDate: '08/01/2024',
-        place: 'Murcia, Spain',
+        place: 'Example, Spain',
         description:
-          'I was a junior on the Front-End developing part of the team',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra nulla nisi, in dignissim nisl maximus mattis. Morbi eleifend tristique fermentum. Duis at nulla iaculis, fermentum dolor malesuada, feugiat lorem. Nam sagittis facilisis ex, dignissim viverra nisi vestibulum eget. Nulla ipsum augue, imperdiet ut sapien et, sollicitudin blandit mauris. Sed faucibus nibh at posuere finibus. Nullam vulputate ante elit, varius pulvinar nisl vehicula eget. Mauris iaculis non erat nec dictum. Curabitur ullamcorper elit aliquam, pellentesque nunc eu, sagittis nunc. Donec vel lacinia sem, vel convallis erat. Nunc ac ligula mollis, feugiat sem vel, eleifend lorem. Suspendisse id metus neque. In mollis tempus aliquam. ',
       },
     ],
   });
